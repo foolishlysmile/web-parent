@@ -21,7 +21,7 @@
 			</el-table-column>
 			<el-table-column type="index" width="60">
 			</el-table-column>
-			<el-table-column prop="name" label="姓名" width="120" sortable>
+			<el-table-column prop="name" label="品牌名称" width="120" sortable>
 			</el-table-column>
 			<el-table-column prop="sex" label="性别" width="100" :formatter="formatSex" sortable>
 			</el-table-column>
@@ -173,12 +173,21 @@
 				};
 				this.listLoading = true;
 				//NProgress.start();
-				getUserListPage(para).then((res) => {
+				/*getUserListPage(para).then((res) => {
 					this.total = res.data.total;
 					this.users = res.data.users;
 					this.listLoading = false;
 					//NProgress.done();
-				});
+				});*/
+				this.$http.get("/product/brand/list")
+					.then(
+				    	res=>{
+				    	    console.debug(res)
+                            this.total = res.data.total;
+                            this.users = res.data;
+                            this.listLoading = false;
+						}
+					)
 			},
 			//删除
 			handleDel: function (index, row) {

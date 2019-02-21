@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-let base = '';
+let base = 'https://www.easy-mock.com/mock/5c5671770e8d497fa4bc65c1/services';
 
-export const requestLogin = params => { return axios.post(`${base}/login`, params).then(res => res.data); };
+export const requestLogin = params => { return axios.post(`${base}/plat/login`, params).then(res => res.data); };
 
 export const getUserList = params => { return axios.get(`${base}/user/list`, { params: params }); };
 
