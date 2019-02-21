@@ -239,7 +239,6 @@
                     message: response.message,
                     type: 'success'
                 });
-                // let path ={name:file.name,url:"http://192.168.43.142"+response.retObj};
             },
             handleChange(value) {
                 this.selectTypes = value;
